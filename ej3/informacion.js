@@ -1,3 +1,16 @@
+/**
+ * @function datos_usuario_introducidos
+    * @@function Perfil()
+        * @typedef {Object}
+        * @property {string} nombre Nombre del usuario
+        * @property {string} apellidos Apellidos del usuario
+        * @property {string} direccion Direccion del usuario
+        * @property {string} email Correo del usuario
+        * @property {string} perfil Datos del usuario
+        * @property {boolean} informacion_correcta Mientras no se guarden los datos no se sale del bucle
+        * @property {string} valores_usuario El usuario dirá si queres salir del bucle o no
+        * @property {string} dato_para_modificar Dato modificado que se guardará
+ */
 function datos_usuario_introducidos() {
     //Recogemos la informacion del usuario
     function Perfil() {
