@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: ej3/informacion.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: ej3/informacion.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @function datos_usuario_introducidos
+    * @@function Perfil()
+        * @typedef {Object}
+        * @property {string} nombre Nombre del usuario
+        * @property {string} apellidos Apellidos del usuario
+        * @property {string} direccion Direccion del usuario
+        * @property {string} email Correo del usuario
+        * @property {string} perfil Datos del usuario
+        * @property {boolean} informacion_correcta Mientras no se guarden los datos no se sale del bucle
+        * @property {string} valores_usuario El usuario dirá si queres salir del bucle o no
+        * @property {string} dato_para_modificar Dato modificado que se guardará
+ */
+function datos_usuario_introducidos() {
+    //Recogemos la informacion del usuario
+    function Perfil() {
+        this.nombre = prompt("Dame tu nombre: ")
+        this.apellidos = prompt("Dame tu apellidos: ")
+        this.direccion = prompt("Dame tu direccion: ")
+        this.telefono = prompt("Dame tu numero de telefono: ")
+        if (Number(this.telefono) != this.telefono) {
+            alert("Solo se aceptan numeros")
+            this.telefono = null
+        }
+        this.email = prompt("Dame tu email: ")
+    }
+    var perfil = new Perfil()
+    console.log("Datos antes de modificar \n" +
+        "\nNombre: " + perfil.nombre +
+        "\nApellidos: " + perfil.apellidos +
+        "\nDireccion: " + perfil.direccion +
+        "\nTelefono: " + perfil.telefono +
+        "\nEmail: " + perfil.email
+    )
+
+    informacion_correcta = false
+    while (!informacion_correcta) {
+
+        var valores_usuario = prompt("Tus datos son: " +
+            "\nNombre: " + perfil.nombre +
+            "\nApellidos: " + perfil.apellidos +
+            "\nDireccion: " + perfil.direccion +
+            "\nTelefono: " + perfil.telefono +
+            "\nEmail: " + perfil.email +
+            "\nEs correcta esta informacion? [Si | No]"
+        )
+        var valores_usuario = valores_usuario.toLocaleLowerCase()
+        if (valores_usuario == "si") {
+            alert("Tus datos se han 'guardado' correctamente")
+            informacion_correcta = !informacion_correcta
+        } else if (valores_usuario == "no") {
+            var dato_para_modificar = prompt("Que dato quieres modificar? [Nombre | Apellidos | Direccion | Telefono | Email]")
+            var dato_para_modificar = dato_para_modificar.toLocaleLowerCase()
+            if (dato_para_modificar == "nombre") {
+                dato_para_modificar = prompt("Dame un nombre nuevo :" + "\nNombre Actual [ " + perfil.nombre + " ] ")
+                perfil.nombre = dato_para_modificar
+            }
+            if (dato_para_modificar == "apellidos") {
+                dato_para_modificar = prompt("Dame un apellido nuevo :" + "\nApellido Actual [ " + perfil.apellidos + " ] ")
+                perfil.apellidos = dato_para_modificar
+            }
+
+            if (dato_para_modificar == "direccion") {
+                dato_para_modificar = prompt("Dame una direccion nueva :" + "\nDireccion Actual [ " + perfil.direccion + " ] ")
+                perfil.direccion = dato_para_modificar
+            }
+            if (dato_para_modificar == "telefono") {
+                dato_para_modificar = prompt("Dame un telefono nuevo :" + "\nTelefono Actual [ " + perfil.telefono + " ] ")
+                if (Number(dato_para_modificar != dato_para_modificar)) {
+                    perfil.telefono = dato_para_modificar
+                } else {
+                    alert("ERROR - Solo se aceptan numeros")
+                }
+
+            }
+            if (dato_para_modificar == "email") {
+                dato_para_modificar = prompt("Dame un correo nuevo :" + "\nCorreo Actual [ " + perfil.email + " ] ")
+                perfil.email = dato_para_modificar
+            }
+        }
+
+        console.log("Dato modicado: " + dato_para_modificar)
+
+    }
+    console.log(perfil)
+    console.log("Datos Finales: \n" + "Nombre: " + perfil.nombre + "\n" + "Apellidos: " + perfil.apellidos + "\n" + "Direccion: " + perfil.direccion + "\n" + "Telefono: " + perfil.telefono + "\n" + "Correo: " + perfil.email)
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cine">cine</a></li><li><a href="global.html#entrada_de_usuario">entrada_de_usuario</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#multiplo_de_5_0">multiplo_de_5_0</a></li><li><a href="global.html#random">random</a></li><li><a href="global.html#retirada_billetes">retirada_billetes</a></li><li><a href="global.html#salida_por_consola">salida_por_consola</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Mon Nov 15 2021 23:17:40 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
